@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="view_phone_popup_template">
+            <t t-name="view_phone_popup">
+                <form action="/ain/send_message_view" 
+                            role="form"
+                            method="POST"
+                            enctype="multipart/form-data"
+                            id="view_phone_form">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    
+                    <div class="modal fade ViewPhonePopup" id="view_phone_popup" data-bs-backdrop="static"
+                    data-bs-keyboard="false" aria-hidden="true"
+                    aria-labelledby="staticBackdropLabel_view_phone_popup" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content ain-modal-content">
+                                <div class="modal-header ain-modal-header d-flex justify-content-between align-items-center">
+                                        <h5 class="modal-title" id="Label_phone_popup_submit">بلاغاتي</h5>
+                                        <button type="button" class="btn-close ain-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                <div class="modal-body ain-modal-body">
+                                    <div class="mb-3 ain-input-group">
+                                        <label for="phoneInput" class="form-label ain-label ain-label-black">أدخل رقم هاتفك المسجل في البلاغ</label>
+                                        <input type="text" name="phone_number" class="form-control ain-input ain-input-wide"
+                                        id="phoneInput" placeholder="7xx xxx xxx" maxlength="9" minlength="9" pattern="[7]{1}[0-9]{8}" required="required"
+                                        oninvalid="this.value === '' ? this.setCustomValidity('هذا الحقل مطلوب') : this.setCustomValidity('يجب أن يبدأ الرقم بالعدد 7 وبطول 9 ارقام')"
+                                        oninput="this.setCustomValidity('')" />
+                                    </div>
+                                </div>
+                                <div class="modal-footer ain-modal-footer">
+                                    <button type="submit" class="btn submit-btn-wide">
+                                            التحقق
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </t>
+    </template>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="success_popup_template" name="Success Page">
+        <t t-name="Ain.success_popup_template">
+            <t t-call="website.layout">
+                <div class="container mt-5 mb-5 Success">
+                    <div class="alert alert-success text-center" role="alert">
+                        <i class="fa fa-check-circle fa-3x text-success mb-3"/>
+                        <h3>تم رفع بلاغك بنجاح</h3>
+                        <p>سيتم ارسال رقم البلاغ إلى الجوال المسجل <br/>تابع صفحة "بلاغاتي" لاستعراض البلاغ</p>
+                        <a href="/ain/home" class="btn btn-primary mt-3 submit-btn-wide">الرئيسية</a>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

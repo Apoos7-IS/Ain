@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="compliant_type_template" name="Complaint with Preview">
+        <t t-call="website.layout">
+            <div class="container mt-4 CompliantType">
+                <form action="/ain/confirm" 
+                        role="form"
+                        method="POST"
+                        enctype="multipart/form-data"
+                        id="complaint_form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                    <!-- Header Section -->
+                    <div class="row mb-4">
+                        <div class="col-12 text-center">
+                            <h2>بلغ الآن</h2>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">التقط الحدث</h5>
+                                </div>
+                                <div class="mb-3 card-body text-center">
+                                    <small class="d-block mt-2">يمكنك رفع الصور أو الفيديوهات أو تسجيل الصوت</small>
+                                    <label class="btn btn-primary btn-lg" for="media_attachment" required="required">
+                                        <i class="fa fa-camera-retro" aria-hidden="true"></i>
+                                    </label>
+                                        <input class="d-none" type="file" name="attachment" id="media_attachment"
+                                        accept="image/*, video/*, audio/*"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- موقع البلاغ -->
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">موقع البلاغ</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="radio-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="classroom" autocomplete="off" value="classroom" required="required"/>
+                                            <label class="btn btn-outline-success" for="classroom">قاعة دراسية</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="computer_lab" autocomplete="off" value="computer_lab" required="required"/>
+                                            <label class="btn btn-outline-success" for="computer_lab">معمل الحاسب الآلي</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="library" autocomplete="off" value="library" required="required"/>
+                                            <label class="btn btn-outline-success" for="library">المكتبة</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="main_hall" autocomplete="off" value="main_hall" required="required"/>
+                                            <label class="btn btn-outline-success" for="main_hall">القاعة الكبرى</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="blue_hall" autocomplete="off" value="blue_hall" required="required"/>
+                                            <label class="btn btn-outline-success" for="blue_hall">القاعة الزرقاء</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="meeting_room" autocomplete="off" value="meeting_room" required="required"/>
+                                            <label class="btn btn-outline-success" for="meeting_room">قاعة الاجتماعات</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="agriculture_lab" autocomplete="off" value="agriculture_lab" required="required"/>
+                                            <label class="btn btn-outline-success" for="agriculture_lab">معمل الزراعة</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="administrative_office" autocomplete="off" value="administrative_office" required="required"/>
+                                            <label class="btn btn-outline-success" for="administrative_office">مكتب إداري</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="clinic" autocomplete="off" value="clinic" required="required"/>
+                                            <label class="btn btn-outline-success" for="clinic">العيادة</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="cafeteria" autocomplete="off" value="cafeteria" required="required"/>
+                                            <label class="btn btn-outline-success" for="cafeteria">البوفيه</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="male_restrooms" autocomplete="off" value="male_restrooms" required="required"/>
+                                            <label class="btn btn-outline-success" for="male_restrooms">حمامات الطلاب</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="female_restrooms" autocomplete="off" value="female_restrooms" required="required"/>
+                                            <label class="btn btn-outline-success" for="female_restrooms">حمامات الطالبات</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="girls_lounge" autocomplete="off" value="girls_lounge" required="required"/>
+                                            <label class="btn btn-outline-success" for="girls_lounge">استراحة البنات</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="girls_garden" autocomplete="off" value="girls_garden" required="required"/>
+                                            <label class="btn btn-outline-success" for="girls_garden">حديقة البنات</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="mosque" autocomplete="off" value="mosque" required="required"/>
+                                            <label class="btn btn-outline-success" for="mosque">المسجد</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="football_field" autocomplete="off" value="football_field" required="required"/>
+                                            <label class="btn btn-outline-success" for="football_field">ملعب كرة القدم</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="parking_lot" autocomplete="off" value="parking_lot" required="required"/>
+                                            <label class="btn btn-outline-success" for="parking_lot">المواقف</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="corridor" autocomplete="off" value="corridor" required="required"/>
+                                            <label class="btn btn-outline-success" for="corridor">الممر</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="staff_restrooms" autocomplete="off" value="staff_restrooms" required="required"/>
+                                            <label class="btn btn-outline-success" for="staff_restrooms">حمامات الموظفين</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_location" id="campus" autocomplete="off" value="campus" required="required"/>
+                                            <label class="btn btn-outline-success" for="campus">الحرم الجامعي</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- نوع البلاغ -->
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">نوع البلاغ</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="radio-group">
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="cleanliness" autocomplete="off" value="cleanliness" required="required"/>
+                                            <label class="btn btn-outline-success" for="cleanliness">نظافة</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="harassment" autocomplete="off" value="harassment" required="required"/>
+                                            <label class="btn btn-outline-success" for="harassment">تحرش</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="theft" autocomplete="off" value="theft" required="required"/>
+                                            <label class="btn btn-outline-success" for="theft">سرقة</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="verbal_abuse" autocomplete="off" value="verbal_abuse" required="required"/>
+                                            <label class="btn btn-outline-success" for="verbal_abuse">تلفظ</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="blackmail" autocomplete="off" value="blackmail" required="required"/>
+                                            <label class="btn btn-outline-success" for="blackmail">ابتزاز</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="threat" autocomplete="off" value="threat" required="required"/>
+                                            <label class="btn btn-outline-success" for="threat">تهديد</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="vandalism" autocomplete="off" value="vandalism" required="required"/>
+                                            <label class="btn btn-outline-success" for="vandalism">تخريب</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="incitement" autocomplete="off" value="incitement" required="required"/>
+                                            <label class="btn btn-outline-success" for="incitement">تحريض</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="assault" autocomplete="off" value="assault" required="required"/>
+                                            <label class="btn btn-outline-success" for="assault">اعتداء</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="accident" autocomplete="off" value="accident" required="required"/>
+                                            <label class="btn btn-outline-success" for="accident">حادث</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="disturbance" autocomplete="off" value="disturbance" required="required"/>
+                                            <label class="btn btn-outline-success" for="disturbance">ازعاج</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="terrorism" autocomplete="off" value="terrorism" required="required"/>
+                                            <label class="btn btn-outline-success" for="terrorism">إرهاب</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="fire" autocomplete="off" value="fire" required="required"/>
+                                            <label class="btn btn-outline-success" for="fire">حريق</label>
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="fraud" autocomplete="off" value="fraud" required="required"/>
+                                            <label class="btn btn-outline-success" for="fraud">احتيال</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="bribery" autocomplete="off" value="bribery" required="required"/>
+                                            <label class="btn btn-outline-success" for="bribery">رشوة</label>
+                                        </div>
+                                        
+                                        <div class="form-check form-check-inline">
+                                            <input type="radio" class="btn-check" name="selected_category" id="bullying" autocomplete="off" value="bullying" required="required"/>
+                                            <label class="btn btn-outline-success" for="bullying">تنمر</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- وصف البلاغ -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">وصف البلاغ</h5>
+                                </div>
+                                <div class="card-body">
+                                    <textarea class="form-control description_input" rows="4" id="description_input"
+                                    name="description" placeholder="أدخل الوصف هنا" required="required"
+                                    oninput="validateDescription(this)"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- بيانات المبلغ -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">بيانات المبلغ</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row-inputs">
+                                        <div class="form-group">
+                                            <label class="form-label" for="reporter_name">الاسم</label>
+                                            <input type="text" class="form-control reporter_name_input"
+                                            id="reporter_name" name="reporter_name" required="required"
+                                            oninput="validateName(this)"/>
+                                        </div>
+                                        <!-- <div class="form-group">
+                                            <label class="form-label" for="phone_number">رقم الجوال</label>
+                                            <input type="text" class="form-control phone_number_input" id="phone_number" name="phone_number"/>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- زر فتح نافذة المعاينة -->
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button type="button" class="btn btn-primary btn-show-popup submit-btn-wide" data-bs-toggle="modal" id="popup_button" data-bs-target="#staticBackdrop"
+                            onclick="document.getElementById('selected_category_input').innerText = document.querySelector('input[name=selected_category]:checked')?.nextElementSibling.innerText || 'لم يتم تحديد النوع';
+                            document.getElementById('selected_location_input').innerText = document.querySelector('input[name=selected_location]:checked')?.nextElementSibling.innerText || 'لم يتم تحديد الموقع';">
+                                رفع البلاغ
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- قالب المعاينة - المودال -->
+                    <div class="modal fade Confirm" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">معاينة تفاصيل البلاغ</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <!-- معاينة التقط الحدث -->
+                                    <div class="card mb-3">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="mb-0">الدليل</h5>
+                                        </div>
+
+                                        <div class="card-body" id="media_preview_container">
+                                            <!-- الملف المراد إرساله (مخفي) -->
+                                            <input type="file" name="attachment" id="attachment_preview" style="display:none;" />
+                                            <!-- معاينة الصورة -->
+                                            <img id="image_preview" class="form-control img-fluid mb-2" style="display: none;"/>
+                                            <!-- معاينة الفيديو -->
+                                            <video id="video_preview" controls="controls" autoplay="autoplay" loop="loop" class="form-control img-fluid mb-2" style="display: none;"/>
+                                            <!-- معاينة الصوت -->
+                                            <audio id="audio_preview" controls="controls" class="form-control w-100 mb-2" style="display: none;"/>
+                                            <!-- معاينة اسم المرفق -->
+                                            <label style="display: none;" class="form-label" name="attachment_name">اسم المرفق هنا</label>
+                                            <!-- رسالة عدم وجود مرفق -->
+                                            <p id="no_media_msg" class="mb-0 text-center py-2 bg-light rounded form-control">لا يوجد ملف مرفق</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- معاينة موقع البلاغ -->
+                                    <div class="card mb-3">
+                                        <div class="card-header bg-primary text-white form-control">
+                                            <h5 class="mb-0 ">موقع البلاغ</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <span id="selected_location_input" class="mb-0 text-center py-2 bg-light rounded form-control"></span>
+                                            <!-- <input type="text" name="selected_location" id="selected_location_input"/> -->
+                                            <!-- <p class="mb-0 text-center py-2 bg-light rounded" id="selected_location_view">لم يتم تحديد الموقع</p> -->
+                                        </div>
+                                    </div>
+                                        <!-- معاينة نوع البلاغ -->
+                                    <div class="card mb-3">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="mb-0">نوع البلاغ</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <span id="selected_category_input" class="mb-0 text-center py-2 bg-light rounded form-control"></span>
+                                            <!-- <input type="hidden" name="selected_category" id="selected_category_input"/> -->
+                                            <!-- <p class="mb-0 text-center py-2 bg-light rounded" id="selected_category_view">لم يتم تحديد النوع</p> -->
+                                        </div>
+                                    </div>
+
+                                    <!-- معاينة وصف البلاغ -->
+                                    <div class="row mb-4">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-header bg-primary text-white">
+                                                    <h5 class="mb-0">وصف البلاغ</h5>
+                                                </div>
+                                                <div class="card-body">
+                                                    <textarea class="form-control description_display" rows="4" id="description_display" name="description" readonly="1"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- معاينة بيانات المبلغ -->
+                                    <div class="row mb-4">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-header bg-primary text-white">
+                                                    <h5 class="mb-0">بيانات المبلغ</h5>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="row-inputs">
+                                                        <div class="form-group">
+                                                            <label class="form-label" for="reporter_name_display">الاسم</label>
+                                                            <input type="text" class="form-control reporter_name_display" id="reporter_name_display" name="reporter_name" readonly="1"/>
+                                                        </div>
+                                                        <!-- <div class="form-group">
+                                                            <label class="form-label" for="phone_number_display">رقم الجوال</label>
+                                                            <input type="text" class="form-control phone_number_display" id="phone_number_display" name="phone_number" readonly="1"/>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">تعديل</button>
+                                    <button type="submit" class="btn btn-primary" id="submit_button">تأكيد الرفع</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <script>
+                function validateDescription(textarea) {
+                    // only characters, numbers and spases allowed
+                    const allowed = textarea.value.replace(/[^a-zA-Z0-9\u0600-\u06FF\s]/g, '');
+                    if (textarea.value !== allowed) {
+                        textarea.value = allowed;
+                    }
+                }
+                function validateName(input) {
+                    // only characters and spases allowed
+                    input.value = input.value.replace(/[^a-zA-Z\u0600-\u06FF\s]/g, '');
+                }
+            </script>
+        </t>
+    </template>
+</odoo>

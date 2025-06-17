@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="compliant_view_template">
+        <t t-call="website.layout">
+            <!-- <t t-call="website.assets_frontend"/> -->
+            <div class="container mt-4 CompliantView">
+                <div class="row mb-4">
+                    <t t-if="compliants">
+                        <t t-foreach="compliants" t-as="rec">
+                            <!-- <span t-esc="rec.compliant_class"/> -->
+                            <!-- <span t-esc="rec.attachment_ids"/> -->
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-white">
+                                        <h3>بلاغ رقم #<span t-esc="rec.number"/></h3>
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <small class="form-label" id="compliantDate"><span t-esc="rec.create_date.strftime('%Y-%m-%d %H:%M:%S')"/></small>
+                                            <small class="form-label" id="status"><span t-esc="rec.state"/></small>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3 card-body">
+                                        <dl>
+                                            <div class="row align-items-center justify-content-center">
+                                                <dt class="col-sm-3">المُبلغ</dt>
+                                                <dd class="col-sm-9" id="reporterName"><span t-esc="rec.reporter_name"/></dd>
+                                            
+                                                <dt class="col-sm-3">التصنيف</dt>
+                                                <dd class="col-sm-9" id="compliantCategory"><span t-field="rec.compliant_class"/></dd>
+                                            
+                                                <dt class="col-sm-3">الموقع</dt>
+                                                <dd class="col-sm-9" id="compliantLocation"><span t-field="rec.location"/></dd>
+                                            
+                                                <dt class="col-sm-3">النوع</dt>
+                                                <dd class="col-sm-9" id="compliantType"><span t-field="rec.compliant_type"/></dd>
+                                            
+                                                <dt class="col-sm-3">الوصف</dt>
+                                                <dd class="col-sm-9" id="compliantDescription"><span t-esc="rec.compliant_description"/></dd>
+                                            </div>
+                                            <!-- <dt class="col-sm-3">الدليل</dt> -->
+                                            <div class="card ain-evidence-card">
+                                                <div class="ain-evidence-header">
+                                                    <h5 class="mb-0">الدليل</h5>
+                                                </div>
+                                                <div class="card-body ain-evidence-body">
+                                                    <t t-if="rec.attachment">
+                                                        <!-- <img t-att-src="'data:image/png;base64,%s' % rec.attachment.decode('utf-8')" alt="مرفق بلاغ"/> -->
+                                                        <t t-if="rec.attachment_type and rec.attachment_type.startswith('image')">
+                                                            <img t-att-src="'data:%s;base64,%s' % (rec.attachment_type, rec.attachment.decode('utf-8'))" alt="مرفق بلاغ"/>
+                                                        </t>
+                                                        <t t-elif="rec.attachment_type and rec.attachment_type.startswith('video')">
+                                                            <video controls="controls" style="max-width: 100%; height: auto;">
+                                                                <source t-att-src="'data:%s;base64,%s' % (rec.attachment_type, rec.attachment.decode('utf-8'))" t-att-type="rec.attachment_type"/>
+                                                                المتصفح لا يدعم عرض الفيديو
+                                                            </video>
+                                                        </t>
+                                                        <t t-elif="rec.attachment_type and rec.attachment_type.startswith('audio')">
+                                                            <audio controls="controls" style="width: 100%;">
+                                                                <source t-att-src="'data:%s;base64,%s' % (rec.attachment_type, rec.attachment.decode('utf-8'))" t-att-type="rec.attachment_type"/>
+                                                                المتصفح لا يدعم تشغيل الصوت
+                                                            </audio>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <span>نوع المرفق غير مدعوم للعرض</span>
+                                                        </t>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span>لا يوجد مرفق</span>
+                                                    </t>
+
+                                                <!-- <t t-if="rec.attachment_ids">
+                                                    <t t-foreach="rec.attachment_ids" t-as="att">
+                                                        <a t-att-href="'/web/content/%s?download=true' % att.id">
+                                                        <t t-esc="att.name"/>
+                                                        </a>
+                                                    </t>
+                                                </t> -->
+
+                                                    <!-- <img id="image_preview" class="form-control img-fluid mb-2" src="/Ain/static/src/img/icons/0.jpg"/>
+                                                    <video id="video_preview" controls="controls" autoplay="autoplay" loop="loop" class="form-control img-fluid mb-2" style="display: none;"/>
+                                                    <audio id="audio_preview" controls="controls" class="form-control w-100 mb-2" style="display: none;"/> -->
+                                                </div>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <a href="/ain/home" class="btn btn-primary my-3">العودة للصفحة الرئيسية</a>
+                            </div>
+                        </t>
+                    </t>
+                    <t t-if="not compliants">
+                        <p class="alert alert-info text-center">لا توجد بلاغات لهذا الرقم</p>
+                    </t>                    
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="view_verification_popup_template">
+        <t t-call="website.layout">
+            <div class="container mt-4 vertical-center-wrapper ViewVerification">
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="shadow">
+                            <div class="card-header modal-header ain-modal-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">المصادقة</h5>
+                            </div>
+                            <div class="mb-3 card-body text-center">
+                                <form action="/ain/my_compliants"
+                                    role="form"
+                                    method="post">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <div class="mb-3">
+                                        <img src="/Ain/static/src/img/otp.png" width="100" height="100" class="img-fluid"/>
+                                    </div>
+
+                                    <small class="d-block my-2">أدخل الرمز المرسل إلى واتساب الخاص بك</small>
+
+                                    <div class="card shadow-sm border-0 p-3 mb-3">
+                                        <div class="d-flex justify-content-center" dir="ltr">
+                                            <input type="text" name="verification_code" id="verification_code" maxlength="4" pattern="[0-9]{4}" class="mx-1" placeholder="* * * *"/>
+                                        </div>
+
+                                        <div t-if="error" class="alert alert-danger alert-dismissable d-print-none text-center my-2" role="alert">
+                                            <span t-esc="error"/>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="my-4 btn submit-btn-wide btn-lg">تحقق</button>
+                                    <!-- <a href="#" id="resend">إعادة الإرسال</a>
+                                    <p class="d-none" id="countdown">إعادة الإرسال بعد: 3:00</p> -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

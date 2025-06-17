@@ -1,0 +1,103 @@
+<odoo>
+    <template id="my_compliant_template" name="Complaint Now">
+        <t t-call="website.layout">
+        <div class="container my-5 MyCompliants">
+            <div class="row justify-content-center">
+            <div class="ain-section-title text-center mb-5">
+                <h2 class="fw-bold">بلاغاتي</h2>
+                <div class="ain-section-underline mx-auto"></div>
+            </div>
+            <t t-if="compliants">
+                <t t-foreach="compliants" t-as="rec">
+                <div class="col-lg-8 col-md-10">
+                    <form action="/ain/compliant_view" 
+                                role="form"
+                                method="POST"
+                                enctype="multipart/form-data"
+                                id="view_phone_popup_template_form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                        <input type="hidden" name="compliant_id" t-att-value="rec.number" />
+                        
+                        <button type="submit" class="border-0 bg-transparent p-0 w-100 text-start">
+                            <div class="ain-complaint-card">
+                                <div class="ain-complaints-list">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="ain-complaint-id">#<span t-esc="rec.number"/></span>
+                                        <span class="ain-complaint-date"><span t-esc="rec.create_date.strftime('%Y-%m-%d %H:%M:%S')"/></span>
+                                    </div>
+                                    <div class="ain-complaint-text">
+                                        <span t-esc="rec.compliant_description"/>
+                                    </div>
+                                    <div class="ain-complaint-tags">
+                                        <span class="ain-tag ain-tag-danger"><span t-field="rec.compliant_class"/></span>
+                                        <span class="ain-tag ain-tag-green"><span t-field="rec.location"/></span>
+                                        <span class="ain-tag ain-tag-info">
+                                            <span t-field="rec.compliant_type"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+                </t>
+            </t>
+
+            <t t-if="not compliants">
+                <p class="alert alert-info text-center">لا توجد بلاغات لهذا الرقم</p>
+            </t>
+            </div>
+        </div>
+        </t>
+    </template>
+</odoo>
+
+
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="my_compliants" name="Complaint Now">
+        <t t-call="website.layout">
+            <form action="/ain/compliant_view" 
+                                role="form"
+                                method="POST"
+                                enctype="multipart/form-data"
+                                id="view_phone_popup_template_form">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                <div class="container my-5 MyCompliants">
+                    <div class="row justify-content-center">
+                        <div class="ain-section-title text-center mb-5">
+                            <h2 class="fw-bold">بلاغاتي</h2>
+                            <div class="ain-section-underline mx-auto"></div>
+                        </div>
+                        <t t-if="compliants">
+                            <t t-foreach="compliants" t-as="rec">
+                                <div class="col-lg-8 col-md-10">
+                                    <div class="ain-complaints-list">
+                                        <input type="hidden" name="compliant_id" t-att-value="rec.number"/>
+                                        <button type="submit" class="ain-complaint-card">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <span class="ain-complaint-id">#<span t-esc="rec.number"/></span>
+                                                <span class="ain-complaint-date"><span t-esc="rec.create_date"/></span>
+                                            </div>
+                                            <div class="ain-complaint-text">
+                                                <span t-esc="rec.compliant_description"/>
+                                            </div>
+                                            <div class="ain-complaint-tags">
+                                                <span class="ain-tag ain-tag-info"><span t-esc="rec.compliant_type"/></span>
+                                                <span class="ain-tag ain-tag-secondary">-</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </t>
+                        </t>
+                        <t t-if="not compliants">
+                            <p class="alert alert-info text-center">لا توجد بلاغات لهذا الرقم</p>
+                        </t>
+                    </div>
+                </div>
+            </form>
+        </t>
+    </template>
+</odoo> -->

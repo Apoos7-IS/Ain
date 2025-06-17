@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="error_popup_template" name="Error Page">
+        <t t-name="Ain.error_popup_template">
+            <t t-call="website.layout">
+                <div class="container mt-5 mb-5 Error">
+                    <div class="alert alert-danger text-center" role="alert">
+                        <i class="fa fa-times-circle fa-3x text-danger mb-3"/>
+                        <h3>حدث خطأ أثناء الإرسال</h3>
+                        <t t-if="error">
+                            <p><t t-esc="error"/></p>
+                        </t>
+                        <t t-if="not error">
+                            <p>حدث خطأ غير متوقع. الرجاء المحاولة لاحقاً.</p>
+                        </t>
+                        <a href="/ain/home" class="btn btn-primary mt-3 submit-btn-wide">العودة للصفحة الرئيسية</a>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

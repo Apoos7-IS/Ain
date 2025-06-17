@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="property_view_tree" model="ir.ui.view">
+        <field name="name">property tree</field>
+        <field name="model">property</field>
+        <field name="arch" type="xml">
+            <tree edit="true" create="true">
+                <field name="number"/>
+                <field name="state"/>
+                <field name="compliant_type"/>
+                <field name="location"/>
+                <field name="compliant_description"/>
+                <field name="compliant_class"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="property_view_form" model="ir.ui.view">
+        <field name="name">property form</field>
+        <field name="model">property</field>
+        <field name="arch" type="xml">
+            <form edit="true" create="true">
+                <header>
+                    <button name="action_escalation" type="object" class="btn btn-primary" string="Escalation" invisible="state != 'new'"/>
+                    <button name="action_done" type="object" class="btn btn-primary" string="Done" invisible="state != 'escalation'"/>
+                    <field name="state" widget="statusbar" readonly="0"/>
+                    <field name="create_date"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="number"/>
+                        <h1><field name="number" class="oe_inline"/></h1>
+                    </div>
+                    <group>
+                        <group string="Reporter Information" class="reporter_information">
+                            <field name="reporter_name" readonly="1"/>
+                            <field name="phone_number" readonly="1"/>
+                            <field name="registration" readonly="1"/>
+                            <field name="collage" readonly="1"/>
+                            <field name="major" readonly="1"/>
+                            <field name="level" readonly="1"/>
+                        </group>
+
+                        <group string="Compliant Information" class="compliant_information">
+                            <field name="compliant_class" readonly="1"/>        
+                            <field name="compliant_type" readonly="1"/>
+                            <field name="location" readonly="1"/>
+                            <field name="compliant_description" readonly="1"/>
+                        </group>
+                    </group>                
+
+                    <group string="Attachment">
+                        <field name="attachment_name" readonly="1"/>
+                        <field name="attachment_backend" widget="image" readonly="1" style="display: none"/>
+                        <field name="attachment" widget="video" readonly="1"/>
+                    </group>
+                    <!-- <notebook>
+                        <page string="Attachment">
+                            <field name="attachment_ids" widget="many2many_attachment_preview"/>
+                            <field name="attachment" widget="image"/>
+                        </page>
+                    </notebook> -->
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="property_action" model="ir.actions.act_window">
+        <field name="name">property action</field>
+        <field name="res_model">property</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

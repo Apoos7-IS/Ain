@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="new_verification_popup_template">
+        <t t-call="website.layout">
+            <div class="container mt-4 vertical-center-wrapper NewVerification">
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="shadow">
+                            <div class="card-header modal-header ain-modal-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">المصادقة</h5>
+                            </div>
+                            <div class="mb-3 card-body text-center">
+                                <form action="/ain/property"
+                                    role="form"
+                                    method="post">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <div class="mb-3">
+                                        <img src="/Ain/static/src/img/otp.png" width="100" height="100" class="img-fluid"/>
+                                    </div>
+
+                                    <small class="d-block my-2">أدخل الرمز المرسل إلى واتساب الخاص بك</small>
+
+                                    <div class="card shadow-sm border-0 p-3 mb-3">
+                                        <div class="d-flex justify-content-center" dir="ltr">
+                                            <input type="text" name="verification_code" id="verification_code" maxlength="4" pattern="[0-9]{4}" class="mx-1" placeholder="* * * *"/>
+                                        </div>
+
+                                        <div t-if="error" class="alert alert-danger alert-dismissable d-print-none text-center my-2" role="alert">
+                                            <span t-esc="error"/>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="my-4 btn submit-btn-wide btn-lg">تحقق</button>
+                                    <!-- <a href="#" id="resend">إعادة الإرسال</a>
+                                    <p class="d-none" id="countdown">إعادة الإرسال بعد: 3:00</p> -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
+
+
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="new_verification_popup_template">
+        <t t-call="website.layout">
+        <t t-name="Ain.new_verification_popup_template">
+            <div class="modal fade NewVerification" id="new_verification_popup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel_new_verification_popup" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content ain-modal-content">
+
+                        <div class="modal-header ain-modal-header d-flex justify-content-between align-items-center">
+                            <h5 class="modal-title" id="staticBackdropLabel_phone_popup_submit">المصادقة</h5>
+                            <button type="button" class="btn-close ain-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body ain-modal-body">
+                                <form action="/ain/new_verification" role="form" method="post">
+                                    <div>
+                                        <img src="/Ain/static/src/img/icons/otp.png" width="100px" height="100px" class="img-fluid"/>
+                                    </div>
+                                    <div class="my-2">
+                                        <p>يرجى إدخال الرمز المرسل إلى هاتفك</p>
+                                    </div>
+                                    <div class="card shadow text-center">
+                                        <div class="d-flex justify-content-center text-center" dir="ltr">
+                                            <input type="text" name="verification_code1" id="verification_code1" value="*" maxlength="1"
+                                                    pattern="[0-9]" class="form-control"/>
+                                            <input type="text" name="verification_code2" id="verification_code2" value="*" maxlength="1"
+                                                    pattern="[0-9]" class="form-control"/>
+                                            <input type="text" name="verification_code3" id="verification_code3" value="*" maxlength="1"
+                                                    pattern="[0-9]" class="form-control"/>
+                                            <input type="text" name="verification_code4" id="verification_code4" value="*" maxlength="1"
+                                                    pattern="[0-9]" class="form-control"/>
+                                        </div>
+                                        <div t-if="error" class="alert alert-danger alert-dismissable d-print-none text-center my-2" role="alert">
+                                            <span t-esc="error" />
+                                        </div>
+                                    </div>
+                                    <a href="/ain/property" class="my-4 btn submit-btn-wide btn-lg col-1">تحقق</a>
+                                    <a href="#" id="resend">إعادة الإرسال</a>
+                                    <p class="d-none" id="countdown">إعادة الإرسال بعد: 3:00</p>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+        </t>
+    </template>
+</odoo> -->

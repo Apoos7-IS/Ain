@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="homepage" inherit_id="website.homepage">
+        <xpath expr="//div[@id='wrap']" position="inside">
+            <div class="container mt-4 Home">
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" style="background-color: #e0e0e0; color: white;">
+                                <!-- <img src="/Ain/static/src/img/ain logo dark.jpeg" class="img-fluid w-100 h-100"/> -->
+                                <img src="/Ain/static/src/img/ain logo light.png" class="img-fluid w-100 h-100"/>
+                            </div>
+                            <div class="mb-3 card-body text-center">
+                                <button type="button" class="btn submit-btn-wide" data-bs-toggle="modal" data-bs-target="#new_phone_popup">
+                                    بلغ الآن
+                                </button>
+                                <t t-call="Ain.new_phone_popup_template"/>
+
+
+                                <button type="button" class="btn btn-secondary submit-btn-wide" data-bs-toggle="modal" data-bs-target="#view_phone_popup">
+                                    بلاغاتي
+                                </button>
+                                <t t-call="Ain.view_phone_popup_template"/>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- <a href="/ain/new_verification" class="my-4 btn submit-btn-wide btn-lg">تحقق</a> -->
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

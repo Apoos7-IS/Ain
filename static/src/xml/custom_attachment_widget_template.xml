@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="ain.CustomAttachmentWidget" t-owl="1">
+        <t t-if="state.attachment">
+            <t t-if="isImage">
+                <img t-att-src="'data:' + state.attachmentType + ';base64,' + state.attachment" alt="attachment" style="max-width: 100%;"/>
+            </t>
+            <t t-elif="isVideo">
+                <video controls="controls" style="max-width: 100%; height: auto;">
+                    <source t-att-src="'data:' + state.attachmentType + ';base64,' + state.attachment" t-att-type="state.attachmentType"/>
+                    متصفحك لا يدعم عرض الفيديو
+                </video>
+            </t>
+            <t t-elif="isAudio">
+                <audio controls="controls" style="width: 100%;">
+                    <source t-att-src="'data:' + state.attachmentType + ';base64,' + state.attachment" t-att-type="state.attachmentType"/>
+                    متصفحك لا يدعم تشغيل الصوت
+                </audio>
+            </t>
+            <t t-else="">
+                <span>نوع المرفق غير مدعوم للعرض</span>
+            </t>
+        </t>
+        <t t-else="">
+            <span>لا يوجد مرفق</span>
+        </t>
+    </t>
+</templates>
