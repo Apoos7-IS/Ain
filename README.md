@@ -1,8 +1,8 @@
-## Ain - Odoo17 Addon
+# Ain - Odoo17 Addon
 Developed by: Abdullah Alzubaidi
 Contributors: Rashad Alhaddad, Bshayer Lardy, Maryam Amshosh
 
-## Overview
+# Overview
 Ain is an incident reporting system designed for educational institutions, allowing students to submit reports directly to the administration via their mobile devices.
 Report Details Include:
 - Attachments (Images, Videos, Voice Recordings, File Uploads)
@@ -15,9 +15,9 @@ The student receives a WhatsApp notification confirming the submission, includin
 
 ---
 
-## How to Use Ain (Step-by-Step Guide)
+# How to Use Ain (Step-by-Step Guide)
 
-#Reporting an Incident:
+#For reporting an Incident:
 1. Click “بلغ الآن” from the home page.
 2. Enter the registered phone number associated with the institution.
 3. Input the verification code sent via WhatsApp.
@@ -31,7 +31,7 @@ The student receives a WhatsApp notification confirming the submission, includin
 - hit "تعديل" to modify details before finalizing.
 10. After clicking "تأكيد الرفع", a success page appears, indicating that the report was successfully submitted. It includes a "الرئيسية" button to return to the main page.
 
-# Check a Previous Reports:
+#For check a Previous Reports:
 1. Click "بلاغاتي" from the home page.
 2. Enter the phone number registered in the report.
 3. Input the verification code sent via WhatsApp.
@@ -43,13 +43,13 @@ The student receives a WhatsApp notification confirming the submission, includin
 - Classification: Criminal / Non-Criminal
 
 
-# Administration view (back-end)
+#Administration view (back-end)
 1. showing Tree-view of all received compliants
 2. review the compliant details by clicking on it
 3. change the compliant state by clicling on top-left button (Escalaten & Done)
 
-## Installation
+# Installation
 (Coming soon)
 
-## Features
+# Features
 (Coming soon)
