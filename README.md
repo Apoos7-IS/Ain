@@ -30,7 +30,9 @@ The student receives a WhatsApp notification confirming the submission, includin
 
 ### Step 1: Locate Odoo Addons Directory
 create custom addons directory
-`mkdir -p /odoo/custom_addons`
+```bash
+mkdir -p /odoo/custom_addons
+```
 
 ### Step 2: Clone the Addon
 `cd /odoo/custom_addons`
