@@ -18,11 +18,11 @@ The student receives a WhatsApp notification confirming the submission, includin
 
 #For reporting an Incident:
 1. Click “بلغ الآن” from the home page.
-![Step 1 Screenshot](https://github.com/user-attachments/assets/4dc0d4c0-6555-48d5-80c9-853b8163504a)
+![Step 1 Home](https://github.com/user-attachments/assets/4dc0d4c0-6555-48d5-80c9-853b8163504a)
 2. Enter the registered phone number associated with the institution.
-<img width="346" height="741" alt="2  ادخال رقم الجوال" src="https://github.com/user-attachments/assets/c1ef6584-4e9b-4077-88cf-9decf05651bf" />
+![Step 2 - Enter Number](https://github.com/user-attachments/assets/c1ef6584-4e9b-4077-88cf-9decf05651bf)
 3. Input the verification code sent via WhatsApp.
-<img width="347" height="742" alt="3  المصادقة" src="https://github.com/user-attachments/assets/824f1179-3c86-4970-8c0f-419e9aa9211d" />
+![Step 3 - Verification](https://github.com/user-attachments/assets/824f1179-3c86-4970-8c0f-419e9aa9211d)
 
 4. Upload attachments (image, video, voice recording, or file).
 5. Select the incident location (classroom, restroom, campus, etc.).
