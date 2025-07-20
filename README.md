@@ -76,45 +76,36 @@ For Reporting:
 
 ---
 
-### Attachments
-Attachment Type  
+### Choose Attachment Type
   ![Attachment Type](https://github.com/user-attachments/assets/0e5100a6-4d81-4476-8ad0-09aa190f8c9f)
 
-Image View
+### Image View
   ![Image View](https://github.com/user-attachments/assets/d8bdbcea-734e-4f00-9a68-97bc0c80caed)
 
-Video View
+### Video View
   ![Video View](https://github.com/user-attachments/assets/55863e00-9582-45e7-a171-d709110b8e3d)
 
-Audio Record View
+### Audio Record View
   ![Record View](https://github.com/user-attachments/assets/4ff713af-0312-4a7a-992f-a3000c82d73c)
 
-File View
+### File View
   ![File View](https://github.com/user-attachments/assets/dc17836a-de6b-4401-9efd-b1fc6c6205aa)
 
 ---
 
 ### Report Details
-Type, Description & Reporter Info
   ![Type, Description & reporter info](https://github.com/user-attachments/assets/0658420f-2816-46f9-9264-4de55c630216)
 
-Submit Button
+### Submit Button
   ![Submit Button](https://github.com/user-attachments/assets/39447d61-7958-4114-92b4-c2cb68c77b3a)
 
 ---
 
 ### Final Review
-Review Summary
   ![Final Review](https://github.com/user-attachments/assets/f2c216e7-82cd-4e38-9fb5-3231cb5f6c1b)
-
-Complete Review
   ![Complete the Final Review](https://github.com/user-attachments/assets/19c6da73-2adf-4323-adfb-b19df93332f0)
 
 ---
 
 ### Successful Submission
 ![Successful](https://github.com/user-attachments/assets/ac947b08-3659-4dde-ae54-dc9bdaf65a74)
-
-
-
-
