@@ -54,7 +54,7 @@ The student receives a WhatsApp notification confirming the submission, includin
 - Classification: Criminal / Non-Criminal
 
 # Screenshots
-For Reporting:
+## 1. For Reporting (بلغ الآن):
 
 ### Home Page
 ![Home](https://github.com/user-attachments/assets/66d5df64-5148-44db-9e94-79da79dd7136)
@@ -109,3 +109,30 @@ For Reporting:
 
 ### Successful Submission
 ![Successful](https://github.com/user-attachments/assets/ac947b08-3659-4dde-ae54-dc9bdaf65a74)
+
+---
+
+## 2. For Review Previous Compliants (بلاغاتي):
+
+### Home Page
+![Home Page](https://github.com/user-attachments/assets/d8c45725-5b87-4566-bfce-5d416783baf9)
+
+### Phone & Verification
+ ![Enter Phone Number](https://github.com/user-attachments/assets/d5799c9f-e4f0-42ba-8f71-47bbb4a08aec)
+  ![OTP Verification](https://github.com/user-attachments/assets/9b1efb97-c5f6-40fc-b3ae-076c4d1adef1)
+
+### Compliants List
+![Complaints List](https://github.com/user-attachments/assets/1781e15b-8972-439f-a8c7-bfdce090dd9a)
+
+### View the Report
+![View Report](https://github.com/user-attachments/assets/6708e3d5-714c-4804-b5ca-21abcc8f9551)
+
+---
+## Complaints Dashboard
+
+### Complaints List
+![Complaints List](https://github.com/user-attachments/assets/8f710710-0847-4269-9bcb-5d02476aded1)
+
+### View Complaint Details
+![View Complaint](https://github.com/user-attachments/assets/a29440fe-2817-42a0-a2d5-924003f03be7)
+![Continue Viewing](https://github.com/user-attachments/assets/0739988c-25bf-4b9a-9ea6-b995681b0247)
