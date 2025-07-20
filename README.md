@@ -22,7 +22,7 @@ The student receives a WhatsApp notification confirming the submission, includin
 (Coming soon)
 
 
-# Installation (Linux Ubuntu)
+# Installation (Ubuntu)
 ### Prerequisites
 - Ensure you have Odoo 17 installed and running.
 - Access to your Odoo server (locally or via SSH).
@@ -40,10 +40,13 @@ cd /odoo/custom_addons
 git clone https://github.com/Apoos7-IS/Ain.git
 ```
 
-### Step 3: Update Odoo Configuration
-add Ain addon path within `addons_path=`
+### Step 3: Update odoo.conf file
+add Ain path within `addons_path=`
 
 ### Step 4: Restart Odoo Server
+```bash
+sudo systemctl restart odoo
+```
 
 ### Step 5: Install the Addon
 1. Log in to Odoo as Administrator.
