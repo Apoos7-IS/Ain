@@ -59,22 +59,14 @@ The student receives a WhatsApp notification confirming the submission, includin
 ### Home Page
 ![Home](https://github.com/user-attachments/assets/66d5df64-5148-44db-9e94-79da79dd7136)
 
----
-
 ### Enter Phone Number
 ![Phone Number](https://github.com/user-attachments/assets/8767f57b-cccc-4605-b39f-1098cd818ae0)
-
----
 
 ### Verification
 ![Verification](https://github.com/user-attachments/assets/619a379d-37c4-4588-a3eb-9efc742a975f)
 
----
-
 ### Capture Incident & Location
 ![Capture the Incident & Location](https://github.com/user-attachments/assets/4e22ee17-a965-4473-ac52-64aee0f0019a)
-
----
 
 ### Choose Attachment Type
   ![Attachment Type](https://github.com/user-attachments/assets/0e5100a6-4d81-4476-8ad0-09aa190f8c9f)
@@ -91,26 +83,18 @@ The student receives a WhatsApp notification confirming the submission, includin
 ### File View
   ![File View](https://github.com/user-attachments/assets/dc17836a-de6b-4401-9efd-b1fc6c6205aa)
 
----
-
 ### Report Details
   ![Type, Description & reporter info](https://github.com/user-attachments/assets/0658420f-2816-46f9-9264-4de55c630216)
 
 ### Submit Button
   ![Submit Button](https://github.com/user-attachments/assets/39447d61-7958-4114-92b4-c2cb68c77b3a)
 
----
-
 ### Final Review
   ![Final Review](https://github.com/user-attachments/assets/f2c216e7-82cd-4e38-9fb5-3231cb5f6c1b)
   ![Complete the Final Review](https://github.com/user-attachments/assets/19c6da73-2adf-4323-adfb-b19df93332f0)
 
----
-
 ### Successful Submission
 ![Successful](https://github.com/user-attachments/assets/ac947b08-3659-4dde-ae54-dc9bdaf65a74)
-
----
 
 ## 2. For Review Previous Compliants (بلاغاتي):
 
@@ -127,7 +111,6 @@ The student receives a WhatsApp notification confirming the submission, includin
 ### View the Report
 ![View Report](https://github.com/user-attachments/assets/6708e3d5-714c-4804-b5ca-21abcc8f9551)
 
----
 ## Complaints Dashboard
 
 ### Complaints List
