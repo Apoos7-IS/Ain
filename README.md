@@ -19,8 +19,12 @@ The student receives a WhatsApp notification confirming the submission, includin
 
 
 # Features
-(Coming soon)
-
+1. Provides the administration with insights from the student’s perspective
+2. Enforces governance and compliance in educational institutions
+3. Automates and archives the complaints department workflow
+4. Protects student privacy by design
+5. User-friendly interface (easy to use)
+6. No login required for students
 
 # Installation (Ubuntu)
 ### Prerequisites
