@@ -22,9 +22,38 @@ The student receives a WhatsApp notification confirming the submission, includin
 (Coming soon)
 
 
-# Installation
-(Coming soon)
+# Installation (Linux Ubuntu)
+### Prerequisites
+- Ensure you have Odoo 17 installed and running.
+- Access to your Odoo server (locally or via SSH).
+- Basic knowledge of Odoo addons directory structure.
 
+### Step 1: Locate Odoo Addons Directory
+create custom addons directory
+mkdir -p /odoo/custom_addons
+
+### Step 2: Clone the Addon
+cd /odoo/custom_addons
+git clone https://github.com/Apoos7-IS/Ain.git
+
+### Step 3: Update Odoo Configuration
+add Ain addon path within addons_path=
+
+### Step 4: Restart Odoo Server
+
+### Step 5: Install the Addon
+1. Log in to Odoo as Administrator.
+2. Go to Apps, click Update Apps List, then search for Ain.
+3. Click Install.
+
+### Step 6: Get started! 🎉
+Click on top-left root menu you will find the app "Ain"
+
+### Links may help you
+- install pgAdmin4
+https://www.youtube.com/watch?v=UGfteFq_6Co&t=113s
+- Install Odoo17 Repo
+https://www.youtube.com/watch?v=2_Yu_hX85NY&list=PLFSlYEuka9lvpCEFgciH4awFj3_7lm-9g&index=3
 
 # How to Use Ain (Step-by-Step Guide)
 
