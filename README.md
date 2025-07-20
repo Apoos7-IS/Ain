@@ -18,6 +18,7 @@ The student receives a WhatsApp notification confirming the submission, includin
 
 #For reporting an Incident:
 1. Click “بلغ الآن” from the home page.
+<img width="347" height="737" alt="1  الرئيسية" src="https://github.com/user-attachments/assets/4dc0d4c0-6555-48d5-80c9-853b8163504a" />
 2. Enter the registered phone number associated with the institution.
 3. Input the verification code sent via WhatsApp.
 4. Upload attachments (image, video, voice recording, or file).
