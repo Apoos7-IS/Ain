@@ -35,8 +35,10 @@ mkdir -p /odoo/custom_addons
 ```
 
 ### Step 2: Clone the Addon
-`cd /odoo/custom_addons`
-`git clone https://github.com/Apoos7-IS/Ain.git`
+```bash
+cd /odoo/custom_addons
+git clone https://github.com/Apoos7-IS/Ain.git
+```
 
 ### Step 3: Update Odoo Configuration
 add Ain addon path within `addons_path=`
